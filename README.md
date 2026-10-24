@@ -90,13 +90,14 @@
 2. 下载发布包：
 
    ```text
-   GPT-Niang_v4.1_Coopanion.zip                      ← 最新版，47 个动作词
+   GPT-Niang_v4.2_Coopanion.zip                      ← 最新版，47 个动作词，特殊动作已调到日常可见
+   GPT-Niang_v4.1_Coopanion.zip                      ← 上一版，特殊动作触发极稀疏
    GPT-Niang_v1.0.3-beta.zip                         ← 旧版，37 个动作词
    ```
 
 3. 不必手动解压 —— 直接把 zip 交给「导入」即可（Coopanion 会解到 `figures/<id>/`），也可以解压后选目录。
 
-> 发布包约 **28 MB**（v4.1）/ **13.9 MB**（v1.0.3），远低于 Coopanion 单包 128 MB 的上限。
+> 发布包约 **28 MB**（v4.2 / v4.1）/ **13.9 MB**（v1.0.3），远低于 Coopanion 单包 128 MB 的上限。
 
 ### 方式二：从源码自行打包
 
@@ -123,11 +124,12 @@ Compress-Archive -Path figure.json,figure.js,base_figure.js,face_painter_r5.js,m
 
 ### 版本说明
 
-清单文件 `figure.json` 里的 `"version"` 字段记录的是**素材内部版本号**，与发布标签是两套编号，不一致属正常。当前两个发布包：
+清单文件 `figure.json` 里的 `"version"` 字段记录的是**素材内部版本号**，与发布标签是两套编号，不一致属正常。当前三个发布包：
 
 | 发布包 | 素材版本 | 动作词 | 说明 |
 | :--- | :--- | ---: | :--- |
-| v4.1（远古智慧龙·互动办公） | `1.4.0` | 47 | 在 37 词基础上新增 10 个特殊动作词；v4.1 相对 v4 改了包内 README，并在 `figure.json` 追加 `persona` 人格字段，形象与动作文件逐字节相同 |
+| v4.2（远古智慧龙·日常动作版） | `1.4.0` | 47 | 把 `special_policy.js` 的触发阈值调到日常可见（空闲 45→6 秒、thinking 18→4 秒、新增社交动作自动抽签），并把 `persona` 人格真正打进发布包；美术资源与 v4.1 逐字节相同 |
+| v4.1（远古智慧龙·互动办公） | `1.4.0` | 47 | 在 37 词基础上新增 10 个特殊动作词。该版发布包只更新了 README，`persona` 字段当时只进了源码、**没打进 zip** |
 | v1.0.3 Beta | `1.3.0` | 37 | 首次公开版本，不含特殊动作 |
 
 ---
@@ -150,7 +152,7 @@ Compress-Archive -Path figure.json,figure.js,base_figure.js,face_painter_r5.js,m
 
 1. **启动 Coopanion**，打开 **装扮**（形象 / 换装）页面。
 2. 在形象行的**最后一格**点击「**导入**」。
-3. 选择下载好的 zip（v4.1 或 v1.0.3 都可以），等缩略图出现即可。
+3. 选择下载好的 zip（v4.2 或 v1.0.3 都可以），等缩略图出现即可。
 
 支持三种投喂方式：**选择 ZIP**、**选择文件夹**、**直接拖拽**。
 
@@ -217,7 +219,7 @@ Chat-gpt（GPT娘），远古智慧龙族：银白淡紫长卷发、紫水晶眼
 Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再驱动控制器播放时序与惯性。
 
 - **v1.0.3**：完整继承原生 **37 个动作词**（`figure.json` → `vocab`），未增删、未改名，手感与官方形象一致。
-- **v4.1**：在 37 词基础上新增 **10 个特殊动作词**（表情 3 + 动作 7），合计 **47 词**。下面 19 + 18 两张表是基础词，v4.1 完全保留。
+- **v4.2 / v4.1**：在 37 词基础上新增 **10 个特殊动作词**（表情 3 + 动作 7），合计 **47 词**。下面 19 + 18 两张表是基础词，v4.2 完全保留。
 
 ### 表情 expression（19）
 
@@ -270,41 +272,51 @@ Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再
 | `flap` | 扑腾 / 激动 | 1.5s | 开心地蹦起来，鳍、尾巴、呆毛一起扑腾 |
 | `dance` | 跳舞 / 摇摆 | 3.4s | 原地踩着节拍摇摆三秒，冒音符 |
 
-### 特殊动作 special（10，仅 v4.1）
+### 特殊动作 special（10，v4.2）
 
-这 10 个词分三种触发方式，**看到它们的频率差别很大**，先看表再看下面的说明。
+这 10 个词分三种触发方式，先看表再看下面的说明。
 
 | 词条 | 中文 | 类型 | 时长 | 怎么触发 |
 | :--- | :--- | :--- | ---: | :--- |
-| `writing` | 写作 | 动作 | 8s | 自动抽签 |
-| `office` | 办公 | 动作 | 8s | 自动抽签 |
-| `magic-orb` | 魔法球待机 | 动作 | 9s | 自动抽签 |
-| `tease-deepseek` | 逗 DeepSeek | 动作 | 5.5s | AI 调 `pet_act` |
-| `respect-claude` | 敬重 Claude | 动作 | 5.5s | AI 调 `pet_act` |
-| `art-commission` | 接画稿开工 | 动作 | 8s | AI 调 `pet_act` |
+| `writing` | 写作 | 动作 | 8s | 自动抽签（thinking 满 4 秒） |
+| `office` | 办公 | 动作 | 8s | 自动抽签（thinking 满 4 秒） |
+| `magic-orb` | 魔法球待机 | 动作 | 9s | 自动抽签（空闲满 6 秒） |
+| `tease-deepseek` | 逗 DeepSeek | 动作 | 5.5s | 自动抽签 + AI 调 `pet_act` |
+| `respect-claude` | 敬重 Claude | 动作 | 5.5s | 自动抽签 + AI 调 `pet_act` |
+| `art-commission` | 接画稿开工 | 动作 | 8s | 自动抽签 + AI 调 `pet_act` |
 | `quota-recovered` | 额度恢复 | 动作 | 4s | 明确提示词 |
 | `quota-exhausted` | 额度耗尽 | 表情 | 0.8s | 明确提示词 |
 | `workload-high` | 工作负载高 | 表情 | 0.2s | 明确提示词 |
 | `workload-normal` | 工作结束 | 表情 | 0.2s | 明确提示词 |
 
-#### 一、自动抽签（`writing` / `office` / `magic-orb`）
+#### 一、自动抽签（`writing` / `office` / `magic-orb` / 三个社交动作）
 
-| 参数 | 值 | 含义 |
-| :--- | ---: | :--- |
-| `thinkingThresholdSeconds` | 18 | 连续 thinking 满 18 秒才算一次合格机会 |
-| `workChance` | 0.25 | 每个条件段抽一次，25% 命中，命中后写作/办公二选一 |
-| `workCooldownSeconds` | 120 | 成功一次后冷却 120 秒 |
-| `idleAttemptSeconds` | 45 | 安全空闲连续 45 秒后抽一次 |
-| `orbChance` | 0.40 | 魔法球机会 40% 命中 |
-| `orbSuccessCooldownSeconds` | 75 | 成功后冷却 75 秒 |
+| 参数 | v4.2 | v4 原值 | 含义 |
+| :--- | ---: | ---: | :--- |
+| `thinkingThresholdSeconds` | 4 | 18 | 连续 thinking 满 4 秒算一次合格机会 |
+| `workChance` | 0.85 | 0.25 | 每段 thinking 抽一次，85% 命中，写作 / 办公二选一 |
+| `workCooldownSeconds` | 90 | 120 | 成功一次后冷却 90 秒 |
+| `idleAttemptSeconds` | 6 | 45 | 安全空闲连续 6 秒后开始抽 |
+| `orbChance` | 0.90 | 0.40 | 魔法球机会 90% 命中 |
+| `orbSuccessCooldownSeconds` | 90 | 75 | 魔法球成功后冷却 90 秒 |
+| `socialChance` | 0.45 | — | 空闲且没有魔法球在演时，抽社交动作的概率 |
+| `socialCooldownSeconds` | 160 | — | 社交动作成功后冷却 160 秒 |
 
-> ⚠️ **大概率看不到，这是设计如此。** 「安全空闲」要求形象处于 `idle` / `sit` 且没被拖拽、没在移动。Coopanion 桌宠默认会自己散步、张望（roam 默认 `calm`，每 2–4 秒掷一次），**一动就打断计时，45 秒从头再算**。实测连续待机 300 秒，魔法球只出现 2 次。项目里的预览演示是**关闭随机散步并固定随机命中**后逐帧截的，用来展示动作本身，不代表实际出现频率。
+「安全空闲」= 形象处于 `idle` / `sit`、没被拖拽、没在移动、没有手势动画、没在听、对话面板没开。
 
-#### 二、必须由 AI 主动调用（`tease-deepseek` / `respect-claude` / `art-commission`）
+> **为什么 v4 感觉没生效**：原参数要求连续空闲 45 秒不被打断，而 Coopanion 桌宠默认会自己散步张望（roam 默认 `calm`，每 2–4 秒掷一次），一动就从零计时 —— 实测待机 300 秒只出 1–2 次魔法球。v4.2 把门槛压到 6 秒，实测（同一份 `special_policy.js`、60fps、固定随机种子）：
+>
+> | 场景 | v4 原参数 | v4.2 |
+> | :--- | ---: | ---: |
+> | 纯待机 5 分钟 | 1 次 | 5 次 |
+> | 聊天节奏（20 秒一轮）5 分钟 | 0 次 | 8 次 |
+> | 开着随机散步干扰 5 分钟 | 0 次 | 5 次 |
+>
+> 冷却负责限流，所以不会没完没了。项目里的预览演示仍是**关闭随机散步并固定随机命中**后逐帧截的，用来展示动作本身长什么样。
 
-这三个词在形象包内**没有定期抽签**，只有外部信号入口。它们的正常出现方式是：和桌宠聊天时，AI 用 `pet_act` 工具把动作演出来。
+#### 二、AI 也可以主动调用（`tease-deepseek` / `respect-claude` / `art-commission`）
 
-想让它更常主动配动作，去 Coopanion 的系统提示词（`data/home/companion/workspace/CONSTITUTION.md`）里加一节，告诉它有哪些词、什么场合演。改动在**下一次新对话开始**时生效。
+这三个词除了上面那次自动抽签，还能由 AI 用 `pet_act` 工具直接演出来。想让它更常主动配动作，去 `data/home/companion/workspace/CONSTITUTION.md` 加一节，告诉它有哪些词、什么场合演。改动在**下一次新对话开始**时生效。
 
 #### 三、宿主未提供信号通道（`quota-*` / `workload-*`）
 
@@ -312,10 +324,18 @@ Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再
 
 用法：明确说出对应的词即可，工作结束记得用 `workload-normal` 收尾。
 
-#### 想更常看到动作？两条路（都不用改发布包）
+#### 还想更密或更安静？改自己这一份
 
-1. **让 AI 主动配**（推荐）：改 `CONSTITUTION.md`，零代码、不影响别人。
-2. **调自己这一份**：解压后改 `special_policy.js` 里 `DEFAULTS` 的 `idleSeconds`（45→6）、`orbChance`（0.40→1）、`thinkingSeconds`（18→3）、`workChance`（0.25→1）。改的是你自己的副本。
+`special_policy.js` 第 2 行的 `DEFAULTS` 就是全部可调项（`TRIGGERS.json` 是同一组数字的说明版）：
+
+```js
+export const DEFAULTS=Object.freeze({workChance:.85,orbChance:.9,thinkingSeconds:4,idleSeconds:6,
+  workCooldown:90,orbCooldown:90,socialChance:.45,socialCooldown:160,workSeconds:8,orbSeconds:9});
+```
+
+- 更安静：调大 `orbCooldown` / `workCooldown` / `socialCooldown`，或把 `socialChance` 设 0。
+- 更热闹：`idleSeconds` 降到 3、`orbCooldown` 降到 45。
+- 改完刷新桌宠即生效，不用重装形象包。
 
 ### 表情绘制机制
 
@@ -411,7 +431,7 @@ Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再
 }
 ```
 
-v4.1 包里已经写好了这一段（1032 字，就是第三节那份龙娘人设的完整版）。注意两件事：
+v4.2 包里已经写好了这一段（1032 字，就是第三节那份龙娘人设的完整版）。注意两件事：
 
 1. **Coopanion 本身不读这个字段**。它由扩展 [`cortico-world-figure-persona`](https://github.com/suhong11300/cortico-world-figure-persona) 读取：装进 `extensions/node_modules/`，再把 `config.json` 里 `worlds.figure-persona.enabled` 设成 `true`。没装扩展时该字段被完全忽略，不影响形象包正常导入使用。
 2. 装了之后，每次会话的环境提示词会多一段「你现在的外形是……」，接人格正文；设置面板会多出「形象人格」页，可以直接改、可以一键生效。
@@ -465,17 +485,23 @@ v4.1 包里已经写好了这一段（1032 字，就是第三节那份龙娘人�
 </details>
 
 <details>
-<summary><b>装了 v4.1，为什么那几个新动作一直看不到？</b></summary>
+<summary><b>装了 v4.2，为什么那几个新动作还是很少？</b></summary>
 
-不是没装好。这 10 个词的触发条件分三类：`writing`/`office`/`magic-orb` 要连续空闲满 45 秒或 thinking 满 18 秒才抽一次，而桌宠默认会自己散步张望，一动就重置计时；`tease-deepseek`/`respect-claude`/`art-commission` 要 AI 主动调 `pet_act`；`quota-*`/`workload-*` 要明确的提示词，形象包不读真实额度。
+先确认装的是 **v4.2** 而不是 v4.1。v4.1 的阈值极其苛刻：`writing`/`office`/`magic-orb` 要连续空闲满 45 秒或 thinking 满 18 秒才抽一次，而桌宠默认会自己散步张望，一动就重置计时，所以基本看不到。
 
-想让它们更常出现，看上面「[特殊动作 special](#特殊动作-special10仅-v41)」一节的最后两条路。
+v4.2 把门槛压到 6 秒 / 4 秒，并给 `tease-deepseek`/`respect-claude`/`art-commission` 加了自动抽签。装好 v4.2 后仍嫌少，看上面「[特殊动作 special](#特殊动作-special10v42)」最后一节，改 `special_policy.js` 的 `DEFAULTS` 即可。
+
+`quota-*`/`workload-*` 是状态提示词，形象包不读真实额度，只能被动触发。
 </details>
 
 <details>
-<summary><b>v4.1 和 v4 有什么区别？</b></summary>
+<summary><b>v4.2 / v4.1 / v4 有什么区别？</b></summary>
 
-只改了包内 `README.md`（补了触发条件说明）。形象、动作与数据文件与 v4 **逐字节相同**，装了 v4 的不换也不影响功能，换过来只是为了拿到那份说明。
+- **v4.2**：把 `special_policy.js` 的触发阈值调到日常可见（空闲 45→6 秒、thinking 18→4 秒、社交动作加了自动抽签），并把 `persona` 人格真正打进发布包。美术资源与 v4.1 **逐字节相同**。
+- **v4.1**：新增 10 个特殊动作词，并给源码加了 `persona` 字段；但该版发布包的 zip 里只更新了 README，persona 没打进去。
+- **v4**：10 个特殊动作词的首版，触发条件最苛刻。
+
+装了 v4 或 v4.1 的，想正常看到特殊动作就换 v4.2。
 </details>
 
 ---
@@ -579,8 +605,8 @@ SOFTWARE.
 **GPT娘 · 白龙 (GPT White Dragon Girl)** is a community-made **figure pack** for [Coopanion](https://github.com/Pal-AI-Lab/Coopanion), the AI desktop companion. Importing it swaps your pet's look for a silver-white, violet-horned ancient dragon girl — while the stock controller, timing, physics and interaction stay untouched.
 
 - **Quick start**: Coopanion → Dress-up page → last card「Import」→ pick the ZIP. Installed to `home/companion/data/figures/gpt-niang/`.
-- **Contents**: a new coordinate grid (10 pivots), dedicated seated parts, 22 full-face expression sheets, a custom face painter, and **47 action words** — the 37 native ones (19 expressions + 18 motions) plus 10 specials added in v4.1 (interaction / office / quota states).
-- **Prompts**: this pack changes **appearance only**. Edit the persona in Coopanion's *Settings → System prompt → CONSTITUTION*, or directly edit `workspace/CONSTITUTION.md` and `workspace/PARTNER.md`. v4.1 also ships an optional `persona` field inside `figure.json`, which only takes effect with the `cortico-world-figure-persona` extension installed and `worlds.figure-persona.enabled` set to `true`.
+- **Contents**: a new coordinate grid (10 pivots), dedicated seated parts, 22 full-face expression sheets, a custom face painter, and **47 action words** — the 37 native ones (19 expressions + 18 motions) plus 10 specials added in v4.1 (interaction / office / quota states), with v4.2 tuning the trigger thresholds so they show up during normal use.
+- **Prompts**: this pack changes **appearance only**. Edit the persona in Coopanion's *Settings → System prompt → CONSTITUTION*, or directly edit `workspace/CONSTITUTION.md` and `workspace/PARTNER.md`. v4.2 also ships an optional `persona` field inside `figure.json`, which only takes effect with the `cortico-world-figure-persona` extension installed and `worlds.figure-persona.enabled` set to `true`.
 - **License**: MIT for original code and art; `native/figure.js` is an unmodified copy from Coopanion and stays **AGPL-3.0-or-later**.
 - **Credits**: built on Pal-AI-Lab/Coopanion and the Cortico framework; original character concept by 溟月(上善无形); DeepSeek mermaid spin-off by ZipPipe.
 
