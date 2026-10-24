@@ -11,7 +11,7 @@
 
 **一只住在屏幕底边、会画画也会毒舌的远古智慧龙娘 —— Coopanion 自定义形象包**
 
-[![Version](https://img.shields.io/badge/version-v1.0.3--beta-aa88d1?style=flat-square)](https://github.com/REPO_URL/releases)
+[![Version](https://img.shields.io/badge/version-v1.0.3--beta-aa88d1?style=flat-square)](https://github.com/suhong11300/gpt-niang/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-4b8bbe?style=flat-square)](#-环境要求)
 [![Figure API](https://img.shields.io/badge/figure%20API-manifest%202-9b59b6?style=flat-square)](#-文件结构)
 [![Vocab](https://img.shields.io/badge/vocab-37%20words-7e57c2?style=flat-square)](#-动作展示与介绍)
@@ -86,7 +86,7 @@
 
 ### 方式一：下载发布包（推荐）
 
-1. 打开本仓库的 [**Releases**](https://github.com/REPO_URL/releases) 页面。
+1. 打开本仓库的 [**Releases**](https://github.com/suhong11300/gpt-niang/releases) 页面。
 2. 下载最新发布包：
 
    ```text
@@ -100,7 +100,7 @@
 ### 方式二：从源码自行打包
 
 ```bash
-git clone https://github.com/REPO_URL.git gpt-niang
+git clone https://github.com/suhong11300/gpt-niang.git gpt-niang
 cd gpt-niang
 ```
 
