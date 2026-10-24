@@ -1,0 +1,2086 @@
+{
+  "status": "1.3.0 runnable art candidate",
+  "units": {
+    "S": 0.2,
+    "X0": 627,
+    "FEET": 1215
+  },
+  "view": [
+    -12,
+    -8,
+    268,
+    272
+  ],
+  "pivots": {
+    "body": [
+      128,
+      256
+    ],
+    "waist": [
+      132.6,
+      171
+    ],
+    "neck": [
+      129.6,
+      123
+    ],
+    "armNear": [
+      112.6,
+      143
+    ],
+    "armFar": [
+      158.6,
+      144
+    ],
+    "legBack": [
+      126.6,
+      201
+    ],
+    "legFront": [
+      152.2,
+      201
+    ],
+    "tail": [
+      196.60000000000002,
+      209
+    ],
+    "wing_l": [
+      100.6,
+      137
+    ],
+    "wing_r": [
+      172.6,
+      137
+    ]
+  },
+  "deformers": {
+    "body": {
+      "kind": "rot",
+      "pivot": [
+        128,
+        256
+      ]
+    },
+    "hair_back": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "tail": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "wing_l": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "wing_r": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "leg_l": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "leg_r": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "dress": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "arm_r": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "arm_l": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "head": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.5999999999999943,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "seat_hair_back": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.6,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "seat_tail": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.6,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "seat_wing_l": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.6,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "seat_wing_r": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.6,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "seat_dress": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.6,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "seat_arm_r": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.6,
+        13,
+        253.4,
+        263.8
+      ]
+    },
+    "seat_arm_l": {
+      "kind": "warp",
+      "parent": "body",
+      "rect": [
+        2.6,
+        13,
+        253.4,
+        263.8
+      ]
+    }
+  },
+  "parts": [
+    {
+      "id": "r4_hair_back",
+      "tex": "hair_back",
+      "parent": "hair_back",
+      "box": [
+        31.399999999999995,
+        34.2,
+        198.99999999999997,
+        220.60000000000002
+      ],
+      "grid": [
+        32,
+        36
+      ],
+      "z": 0,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.11483253588516747,
+        0.08452950558213716,
+        0.9082934609250398,
+        0.9641148325358851
+      ]
+    },
+    {
+      "id": "r4_tail",
+      "tex": "tail",
+      "parent": "tail",
+      "box": [
+        189.20000000000002,
+        177.00000000000003,
+        43.199999999999974,
+        69.99999999999999
+      ],
+      "grid": [
+        14,
+        18
+      ],
+      "z": 1,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.7440191387559809,
+        0.6539074960127592,
+        0.916267942583732,
+        0.9330143540669856
+      ]
+    },
+    {
+      "id": "r4_wing_l",
+      "tex": "wing_l",
+      "parent": "wing_l",
+      "box": [
+        31.199999999999996,
+        121.4,
+        59.80000000000001,
+        37.800000000000004
+      ],
+      "grid": [
+        16,
+        10
+      ],
+      "z": 2,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.11403508771929824,
+        0.43221690590111644,
+        0.3524720893141946,
+        0.5829346092503987
+      ]
+    },
+    {
+      "id": "r4_wing_r",
+      "tex": "wing_r",
+      "parent": "wing_r",
+      "box": [
+        183.39999999999998,
+        125.2,
+        50,
+        33.800000000000004
+      ],
+      "grid": [
+        16,
+        10
+      ],
+      "z": 3,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.7208931419457735,
+        0.4473684210526316,
+        0.9202551834130781,
+        0.5821371610845295
+      ]
+    },
+    {
+      "id": "r4_leg_l",
+      "tex": "leg_l",
+      "parent": "leg_l",
+      "box": [
+        111.8,
+        192,
+        28.599999999999994,
+        66.40000000000002
+      ],
+      "grid": [
+        8,
+        16
+      ],
+      "z": 4,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.4354066985645933,
+        0.7137161084529505,
+        0.5494417862838915,
+        0.9784688995215312
+      ]
+    },
+    {
+      "id": "r4_leg_r",
+      "tex": "leg_r",
+      "parent": "leg_r",
+      "box": [
+        141.20000000000002,
+        208.20000000000002,
+        24.799999999999983,
+        48.599999999999994
+      ],
+      "grid": [
+        8,
+        16
+      ],
+      "z": 5,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.5526315789473685,
+        0.7783094098883573,
+        0.6515151515151515,
+        0.9720893141945773
+      ]
+    },
+    {
+      "id": "r4_dress",
+      "tex": "dress",
+      "parent": "dress",
+      "box": [
+        72,
+        127.80000000000001,
+        133.20000000000002,
+        125.79999999999998
+      ],
+      "grid": [
+        24,
+        28
+      ],
+      "z": 6,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.2767145135566188,
+        0.45773524720893144,
+        0.8078149920255183,
+        0.9593301435406698
+      ]
+    },
+    {
+      "id": "r4_arm_r",
+      "tex": "arm_r",
+      "parent": "arm_r",
+      "box": [
+        154,
+        141.2,
+        46.800000000000026,
+        83.80000000000003
+      ],
+      "grid": [
+        12,
+        18
+      ],
+      "z": 7,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.6036682615629984,
+        0.511164274322169,
+        0.7902711323763956,
+        0.8452950558213717
+      ]
+    },
+    {
+      "id": "r4_arm_l",
+      "tex": "arm_l",
+      "parent": "arm_l",
+      "box": [
+        79.39999999999999,
+        139.60000000000002,
+        43.6,
+        84.8
+      ],
+      "grid": [
+        12,
+        18
+      ],
+      "z": 8,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.3062200956937799,
+        0.5047846889952153,
+        0.4800637958532695,
+        0.8429027113237639
+      ]
+    },
+    {
+      "id": "r4_head",
+      "tex": "head",
+      "parent": "head",
+      "box": [
+        62.2,
+        18.2,
+        133.60000000000002,
+        112.2
+      ],
+      "grid": [
+        28,
+        26
+      ],
+      "z": 30,
+      "sourceFullBox": [
+        2.5999999999999943,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.23763955342902712,
+        0.02073365231259968,
+        0.7703349282296651,
+        0.46810207336523124
+      ]
+    },
+    {
+      "id": "r5_seat_hair_back",
+      "tex": "seat_hair_back",
+      "parent": "seat_hair_back",
+      "box": [
+        5.6,
+        30.200000000000003,
+        245.20000000000002,
+        213.2
+      ],
+      "grid": [
+        32,
+        36
+      ],
+      "z": 10,
+      "sourceFullBox": [
+        2.6,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.011961722488038277,
+        0.0685805422647528,
+        0.9896331738437002,
+        0.9186602870813397
+      ]
+    },
+    {
+      "id": "r5_seat_tail",
+      "tex": "seat_tail",
+      "parent": "seat_tail",
+      "box": [
+        199.4,
+        173.2,
+        52.8,
+        60.60000000000003
+      ],
+      "grid": [
+        14,
+        18
+      ],
+      "z": 11,
+      "sourceFullBox": [
+        2.6,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.784688995215311,
+        0.638755980861244,
+        0.9952153110047847,
+        0.8803827751196173
+      ]
+    },
+    {
+      "id": "r5_seat_wing_l",
+      "tex": "seat_wing_l",
+      "parent": "seat_wing_l",
+      "box": [
+        31.800000000000004,
+        121.4,
+        59.20000000000001,
+        37.800000000000004
+      ],
+      "grid": [
+        16,
+        10
+      ],
+      "z": 12,
+      "sourceFullBox": [
+        2.6,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.11642743221690591,
+        0.43221690590111644,
+        0.3524720893141946,
+        0.5829346092503987
+      ]
+    },
+    {
+      "id": "r5_seat_wing_r",
+      "tex": "seat_wing_r",
+      "parent": "seat_wing_r",
+      "box": [
+        183.39999999999998,
+        125.2,
+        50,
+        33.800000000000004
+      ],
+      "grid": [
+        16,
+        10
+      ],
+      "z": 13,
+      "sourceFullBox": [
+        2.6,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.7208931419457735,
+        0.4473684210526316,
+        0.9202551834130781,
+        0.5821371610845295
+      ]
+    },
+    {
+      "id": "r5_seat_dress",
+      "tex": "seat_dress",
+      "parent": "seat_dress",
+      "box": [
+        17,
+        128,
+        225.60000000000002,
+        115.2
+      ],
+      "grid": [
+        24,
+        28
+      ],
+      "z": 14,
+      "sourceFullBox": [
+        2.6,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.05741626794258373,
+        0.4585326953748006,
+        0.9569377990430622,
+        0.9178628389154705
+      ]
+    },
+    {
+      "id": "r5_seat_arm_r",
+      "tex": "seat_arm_r",
+      "parent": "seat_arm_r",
+      "box": [
+        151.00000000000003,
+        144,
+        21.999999999999986,
+        55.60000000000002
+      ],
+      "grid": [
+        12,
+        18
+      ],
+      "z": 15,
+      "sourceFullBox": [
+        2.6,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.5917065390749602,
+        0.5223285486443381,
+        0.6794258373205742,
+        0.7440191387559809
+      ]
+    },
+    {
+      "id": "r5_seat_arm_l",
+      "tex": "seat_arm_l",
+      "parent": "seat_arm_l",
+      "box": [
+        98.2,
+        140.8,
+        55.99999999999999,
+        56.19999999999998
+      ],
+      "grid": [
+        12,
+        18
+      ],
+      "z": 16,
+      "sourceFullBox": [
+        2.6,
+        13,
+        250.8,
+        250.8
+      ],
+      "uvBox": [
+        0.38118022328548645,
+        0.5095693779904307,
+        0.6044657097288676,
+        0.733652312599681
+      ]
+    },
+    {
+      "id": "r5_face",
+      "tex": "face",
+      "parent": "head",
+      "box": [
+        97.19999999999999,
+        86.4,
+        62.199999999999996,
+        33.2
+      ],
+      "grid": [
+        12,
+        8
+      ],
+      "z": 31,
+      "sourceFullBox": [
+        94.6,
+        83,
+        68,
+        40
+      ],
+      "uvBox": [
+        0.03823529411764706,
+        0.085,
+        0.9529411764705882,
+        0.915
+      ]
+    }
+  ],
+  "seated": {
+    "sourceGroundProxyY": 1148,
+    "standingFeetY": 1215,
+    "nativeBodySink": 19.4,
+    "sourceScale": 0.2,
+    "translationY": -6,
+    "activation": "native alpha.skirt_sit; original short 0.44..0.54 sit transition",
+    "head": "retained original standing head, not baked seated face",
+    "hairSourceTranslationY": -15
+  },
+  "face": {
+    "names": [
+      "neutral",
+      "happy",
+      "wink",
+      "love",
+      "shy",
+      "surprised",
+      "angry",
+      "sad",
+      "sleepy",
+      "thinking",
+      "smug",
+      "pout",
+      "worried",
+      "determined",
+      "flustered",
+      "scared",
+      "excited",
+      "cry",
+      "confused",
+      "sleep",
+      "dizzy",
+      "dragged"
+    ],
+    "patch": [
+      460,
+      350,
+      340,
+      200
+    ],
+    "mask": "face_mask.png",
+    "eyeCentres": [
+      [
+        94,
+        127
+      ],
+      [
+        258,
+        76
+      ]
+    ],
+    "mouthCentre": [
+      196,
+      153
+    ],
+    "registeredBy": "common sheet scale + translation-only invariant-hair gradient correlation",
+    "extraStripCommonScale": 0.7265135699373695,
+    "registration": [
+      {
+        "id": "neutral",
+        "score": 0.8201303845604853,
+        "dx": 1,
+        "dy": 0
+      },
+      {
+        "id": "happy",
+        "score": 0.7786059638020806,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "wink",
+        "score": 0.766761154612236,
+        "dx": 0,
+        "dy": 0
+      },
+      {
+        "id": "love",
+        "score": 0.7813886886900294,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "shy",
+        "score": 0.8190832261276851,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "surprised",
+        "score": 0.7360031265079426,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "angry",
+        "score": 0.7888996224943525,
+        "dx": 0,
+        "dy": 0
+      },
+      {
+        "id": "sad",
+        "score": 0.7389637786298051,
+        "dx": 0,
+        "dy": 0
+      },
+      {
+        "id": "sleepy",
+        "score": 0.7869009783840737,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "thinking",
+        "score": 0.7283302412110113,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "smug",
+        "score": 0.744324366403019,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "pout",
+        "score": 0.7682435319466545,
+        "dx": 0,
+        "dy": 0
+      },
+      {
+        "id": "worried",
+        "score": 0.7566356672520473,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "determined",
+        "score": 0.8054310632472552,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "flustered",
+        "score": 0.7106147320564297,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "scared",
+        "score": 0.6898588237547887,
+        "dx": 0,
+        "dy": 0
+      },
+      {
+        "id": "excited",
+        "score": 0.7825760759147141,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "cry",
+        "score": 0.7637575550421979,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "confused",
+        "score": 0.7598087823911528,
+        "dx": 1,
+        "dy": 1
+      },
+      {
+        "id": "sleep",
+        "score": 0.7504735195175949,
+        "dx": 0,
+        "dy": 0
+      },
+      {
+        "id": "dizzy",
+        "score": 0.45081079980802913,
+        "dx": -4,
+        "dy": -4
+      },
+      {
+        "id": "dragged",
+        "score": 0.48447837384808806,
+        "dx": -3,
+        "dy": -4
+      },
+      {
+        "id": "flustered",
+        "score": 0.43734034054802956,
+        "dx": -3,
+        "dy": 4
+      },
+      {
+        "id": "cry",
+        "score": 0.47144096625238074,
+        "dx": -3,
+        "dy": -4
+      }
+    ]
+  },
+  "rearHair": {
+    "standing": "complete clean rear-hair source, root fade100..150",
+    "seated": "complete pooled hair source, uniform vertical registration only",
+    "reason": "remove foreign wing-outline and cloth scraps rather than move them to another cutout"
+  },
+  "meshOptimization": {
+    "method": "crop rest box + matching UV rectangle; no art scaling or repaint",
+    "verticesBefore": 41038,
+    "verticesAfter": 7404,
+    "details": [
+      {
+        "id": "hair_back",
+        "grid": [
+          32,
+          36
+        ],
+        "sourceCrop": [
+          144,
+          106,
+          995,
+          1103
+        ],
+        "uvBox": [
+          0.11483253588516747,
+          0.08452950558213716,
+          0.9082934609250398,
+          0.9641148325358851
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "tail",
+        "grid": [
+          14,
+          18
+        ],
+        "sourceCrop": [
+          933,
+          820,
+          216,
+          350
+        ],
+        "uvBox": [
+          0.7440191387559809,
+          0.6539074960127592,
+          0.916267942583732,
+          0.9330143540669856
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "wing_l",
+        "grid": [
+          16,
+          10
+        ],
+        "sourceCrop": [
+          143,
+          542,
+          299,
+          189
+        ],
+        "uvBox": [
+          0.11403508771929824,
+          0.43221690590111644,
+          0.3524720893141946,
+          0.5829346092503987
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "wing_r",
+        "grid": [
+          16,
+          10
+        ],
+        "sourceCrop": [
+          904,
+          561,
+          250,
+          169
+        ],
+        "uvBox": [
+          0.7208931419457735,
+          0.4473684210526316,
+          0.9202551834130781,
+          0.5821371610845295
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "leg_l",
+        "grid": [
+          8,
+          16
+        ],
+        "sourceCrop": [
+          546,
+          895,
+          143,
+          332
+        ],
+        "uvBox": [
+          0.4354066985645933,
+          0.7137161084529505,
+          0.5494417862838915,
+          0.9784688995215312
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "leg_r",
+        "grid": [
+          8,
+          16
+        ],
+        "sourceCrop": [
+          693,
+          976,
+          124,
+          243
+        ],
+        "uvBox": [
+          0.5526315789473685,
+          0.7783094098883573,
+          0.6515151515151515,
+          0.9720893141945773
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "dress",
+        "grid": [
+          24,
+          28
+        ],
+        "sourceCrop": [
+          347,
+          574,
+          666,
+          629
+        ],
+        "uvBox": [
+          0.2767145135566188,
+          0.45773524720893144,
+          0.8078149920255183,
+          0.9593301435406698
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "arm_r",
+        "grid": [
+          12,
+          18
+        ],
+        "sourceCrop": [
+          757,
+          641,
+          234,
+          419
+        ],
+        "uvBox": [
+          0.6036682615629984,
+          0.511164274322169,
+          0.7902711323763956,
+          0.8452950558213717
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "arm_l",
+        "grid": [
+          12,
+          18
+        ],
+        "sourceCrop": [
+          384,
+          633,
+          218,
+          424
+        ],
+        "uvBox": [
+          0.3062200956937799,
+          0.5047846889952153,
+          0.4800637958532695,
+          0.8429027113237639
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "head",
+        "grid": [
+          28,
+          26
+        ],
+        "sourceCrop": [
+          298,
+          26,
+          668,
+          561
+        ],
+        "uvBox": [
+          0.23763955342902712,
+          0.02073365231259968,
+          0.7703349282296651,
+          0.46810207336523124
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "seat_hair_back",
+        "grid": [
+          32,
+          36
+        ],
+        "sourceCrop": [
+          15,
+          86,
+          1226,
+          1066
+        ],
+        "uvBox": [
+          0.011961722488038277,
+          0.0685805422647528,
+          0.9896331738437002,
+          0.9186602870813397
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "seat_tail",
+        "grid": [
+          14,
+          18
+        ],
+        "sourceCrop": [
+          984,
+          801,
+          264,
+          303
+        ],
+        "uvBox": [
+          0.784688995215311,
+          0.638755980861244,
+          0.9952153110047847,
+          0.8803827751196173
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "seat_wing_l",
+        "grid": [
+          16,
+          10
+        ],
+        "sourceCrop": [
+          146,
+          542,
+          296,
+          189
+        ],
+        "uvBox": [
+          0.11642743221690591,
+          0.43221690590111644,
+          0.3524720893141946,
+          0.5829346092503987
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "seat_wing_r",
+        "grid": [
+          16,
+          10
+        ],
+        "sourceCrop": [
+          904,
+          561,
+          250,
+          169
+        ],
+        "uvBox": [
+          0.7208931419457735,
+          0.4473684210526316,
+          0.9202551834130781,
+          0.5821371610845295
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "seat_dress",
+        "grid": [
+          24,
+          28
+        ],
+        "sourceCrop": [
+          72,
+          575,
+          1128,
+          576
+        ],
+        "uvBox": [
+          0.05741626794258373,
+          0.4585326953748006,
+          0.9569377990430622,
+          0.9178628389154705
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "seat_arm_r",
+        "grid": [
+          12,
+          18
+        ],
+        "sourceCrop": [
+          742,
+          655,
+          110,
+          278
+        ],
+        "uvBox": [
+          0.5917065390749602,
+          0.5223285486443381,
+          0.6794258373205742,
+          0.7440191387559809
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "seat_arm_l",
+        "grid": [
+          12,
+          18
+        ],
+        "sourceCrop": [
+          478,
+          639,
+          280,
+          281
+        ],
+        "uvBox": [
+          0.38118022328548645,
+          0.5095693779904307,
+          0.6044657097288676,
+          0.733652312599681
+        ],
+        "visiblePixelScaleUnchanged": true
+      },
+      {
+        "id": "face",
+        "grid": [
+          12,
+          8
+        ],
+        "sourceCrop": [
+          13,
+          17,
+          311,
+          166
+        ],
+        "uvBox": [
+          0.03823529411764706,
+          0.085,
+          0.9529411764705882,
+          0.915
+        ],
+        "visiblePixelScaleUnchanged": true
+      }
+    ]
+  },
+  "native": {
+    "units": {
+      "S": 0.19,
+      "X0": 650,
+      "FEET": 1363,
+      "DS": 0.6,
+      "featDS": 1
+    },
+    "pivots": {
+      "body": [
+        128,
+        256
+      ],
+      "waist": [
+        128,
+        188.93
+      ],
+      "neck": [
+        129.9,
+        154.73
+      ],
+      "armNear": [
+        113.18,
+        166.13
+      ],
+      "armFar": [
+        153.65,
+        168.98
+      ],
+      "legBack": [
+        112.42,
+        203.18
+      ],
+      "legFront": [
+        144.15,
+        203.18
+      ],
+      "tail": [
+        88.1,
+        206.03
+      ],
+      "finNear": [
+        80.88,
+        128.13
+      ],
+      "finFar": [
+        173.22,
+        126.23
+      ],
+      "ahoge": [
+        118.5,
+        54.03
+      ],
+      "head": [
+        137.5,
+        114.83
+      ]
+    },
+    "parts": [
+      {
+        "id": "hair_back",
+        "tex": "hair_back",
+        "z": 1,
+        "parent": "hairSway",
+        "grid": [
+          8,
+          12
+        ],
+        "box": [
+          39.46,
+          48.33,
+          144.21,
+          173.66
+        ]
+      },
+      {
+        "id": "tail",
+        "tex": "tail",
+        "z": 1.5,
+        "parent": "tailBend",
+        "grid": [
+          10,
+          4
+        ],
+        "box": [
+          24.26,
+          172.21,
+          83.03,
+          40.47
+        ]
+      },
+      {
+        "id": "hair_back_curl",
+        "tex": "hair_back_curl",
+        "z": 1.75,
+        "parent": "hairSway",
+        "grid": [
+          4,
+          8
+        ],
+        "box": [
+          74.23,
+          171.83,
+          41.23,
+          47.88
+        ]
+      },
+      {
+        "id": "arm_far",
+        "tex": "arm_far",
+        "z": 4.5,
+        "parent": "armFar",
+        "grid": [
+          3,
+          5
+        ],
+        "box": [
+          144.91,
+          163.28,
+          28.5,
+          39.71
+        ]
+      },
+      {
+        "id": "leg_back",
+        "tex": "leg_back",
+        "z": 4,
+        "parent": "legBack",
+        "grid": [
+          3,
+          10
+        ],
+        "box": [
+          96.08,
+          173.16,
+          40.28,
+          84.55
+        ]
+      },
+      {
+        "id": "leg_front",
+        "tex": "leg_front",
+        "z": 3,
+        "parent": "legFront",
+        "grid": [
+          3,
+          10
+        ],
+        "box": [
+          120.21,
+          168.79,
+          43.7,
+          86.83
+        ]
+      },
+      {
+        "id": "torso_up",
+        "tex": "torso_up",
+        "z": 5,
+        "parent": "body",
+        "grid": [
+          6,
+          6
+        ],
+        "box": [
+          106.15,
+          147.89,
+          48.83,
+          46.55
+        ]
+      },
+      {
+        "id": "hair_front_right",
+        "tex": "hair_front_right",
+        "z": 5.05,
+        "parent": "hairSway",
+        "grid": [
+          4,
+          6
+        ],
+        "box": [
+          146.62,
+          148.27,
+          30.21,
+          42.75
+        ]
+      },
+      {
+        "id": "arm_far_end_front",
+        "tex": "arm_far_end_front",
+        "z": 5.1,
+        "parent": "armFar",
+        "grid": [
+          3,
+          3
+        ],
+        "box": [
+          156.88,
+          183.99,
+          16.53,
+          19
+        ]
+      },
+      {
+        "id": "skirt",
+        "tex": "skirt",
+        "z": 5.2,
+        "parent": "skirt",
+        "grid": [
+          8,
+          6
+        ],
+        "box": [
+          79.55,
+          168.41,
+          98.04,
+          61.18
+        ]
+      },
+      {
+        "id": "skirt_sit",
+        "tex": "skirt_sit",
+        "z": 5.3,
+        "parent": "skirtSit",
+        "grid": [
+          8,
+          4
+        ],
+        "box": [
+          47.44,
+          168.98,
+          151.81,
+          68.97
+        ]
+      },
+      {
+        "id": "hair_front_left",
+        "tex": "hair_front_left",
+        "z": 5.4,
+        "parent": "hairSway",
+        "grid": [
+          4,
+          8
+        ],
+        "box": [
+          60.93,
+          118.63,
+          44.84,
+          76.57
+        ]
+      },
+      {
+        "id": "waist_bow_front",
+        "tex": "waist_bow_front",
+        "z": 5.5,
+        "parent": "skirt",
+        "grid": [
+          4,
+          4
+        ],
+        "box": [
+          84.87,
+          168.41,
+          29.83,
+          33.06
+        ]
+      },
+      {
+        "id": "waist_bow_sit_front",
+        "tex": "waist_bow_sit_front",
+        "z": 5.55,
+        "parent": "skirtSit",
+        "grid": [
+          4,
+          4
+        ],
+        "box": [
+          79.74,
+          168.98,
+          39.52,
+          28.88
+        ]
+      },
+      {
+        "id": "arm_near",
+        "tex": "arm_near",
+        "z": 6,
+        "parent": "armNear",
+        "grid": [
+          4,
+          6
+        ],
+        "box": [
+          93.8,
+          157.96,
+          28.69,
+          54.53
+        ]
+      },
+      {
+        "id": "fin_far",
+        "tex": "fin_far",
+        "z": 7,
+        "parent": "finFar",
+        "grid": [
+          4,
+          3
+        ],
+        "box": [
+          166,
+          103.62,
+          38.76,
+          39.14
+        ]
+      },
+      {
+        "id": "sidelocks",
+        "tex": "sidelocks",
+        "z": 7.5,
+        "parent": "bangsSway",
+        "grid": [
+          4,
+          8
+        ],
+        "box": [
+          87.72,
+          124.14,
+          98.23,
+          49.21
+        ]
+      },
+      {
+        "id": "face",
+        "tex": "face",
+        "z": 8,
+        "parent": "headMid",
+        "grid": [
+          6,
+          6
+        ],
+        "box": [
+          100.26,
+          73.98,
+          75.62,
+          82.08
+        ]
+      },
+      {
+        "id": "eye_creases",
+        "tex": "eye_creases",
+        "z": 8.5,
+        "parent": "headFeat",
+        "grid": [
+          4,
+          2
+        ],
+        "box": [
+          126.29,
+          108.94,
+          44.46,
+          9.88
+        ]
+      },
+      {
+        "id": "brows",
+        "tex": "brows",
+        "z": 8.6,
+        "parent": "headFeat",
+        "grid": [
+          12,
+          2
+        ],
+        "box": [
+          117.74,
+          97.35,
+          58.33,
+          9.12
+        ]
+      },
+      {
+        "id": "headdress",
+        "tex": "headdress",
+        "z": 12.5,
+        "parent": "headMid",
+        "grid": [
+          8,
+          4
+        ],
+        "box": [
+          72.71,
+          38.64,
+          114.76,
+          72.2
+        ]
+      },
+      {
+        "id": "fin_near",
+        "tex": "fin_near",
+        "z": 11,
+        "parent": "finNear",
+        "grid": [
+          5,
+          3
+        ],
+        "box": [
+          37.37,
+          100.39,
+          59.85,
+          42.75
+        ]
+      },
+      {
+        "id": "bow",
+        "tex": "bow",
+        "z": 13.8,
+        "parent": "headMid",
+        "grid": [
+          3,
+          3
+        ],
+        "box": [
+          66.06,
+          94.5,
+          28.88,
+          24.32
+        ]
+      },
+      {
+        "id": "bangs",
+        "tex": "bangs",
+        "z": 13,
+        "parent": "bangsSway",
+        "grid": [
+          8,
+          10
+        ],
+        "box": [
+          80.69,
+          51.75,
+          112.29,
+          99.75
+        ]
+      },
+      {
+        "id": "ahoge",
+        "tex": "ahoge",
+        "z": 14,
+        "parent": "ahoge",
+        "grid": [
+          5,
+          4
+        ],
+        "box": [
+          87.15,
+          20.4,
+          53.2,
+          36.29
+        ]
+      }
+    ],
+    "feat": {
+      "eyes": {
+        "eyeL": {
+          "lash": [
+            549,
+            609,
+            714,
+            715
+          ],
+          "ball": [
+            585,
+            630,
+            710,
+            748
+          ],
+          "iris": [
+            611,
+            629,
+            707,
+            748
+          ],
+          "lidFit": [
+            0.008654097031104648,
+            -11.40448806820491,
+            4388.756473993086
+          ],
+          "rimFit": [
+            -0.011105816330789699,
+            14.433190194160977,
+            -3943.1944247092115
+          ]
+        },
+        "eyeR": {
+          "lash": [
+            825,
+            617,
+            911,
+            701
+          ],
+          "ball": [
+            819,
+            635,
+            886,
+            745
+          ],
+          "iris": [
+            822,
+            636,
+            874,
+            744
+          ],
+          "lidFit": [
+            0.034502404875217586,
+            -59.064235979945046,
+            25913.794804961508
+          ],
+          "rimFit": [
+            -0.053416795724098264,
+            90.54594798983726,
+            -37627.38070212919
+          ]
+        }
+      },
+      "sprites": {
+        "neutral_mouth": [
+          758,
+          764,
+          773,
+          775
+        ],
+        "happy_eyeL": [
+          554,
+          651,
+          699,
+          756
+        ],
+        "happy_eyeR": [
+          792,
+          659,
+          877,
+          754
+        ],
+        "happy_mouth": [
+          715,
+          740,
+          772,
+          783
+        ],
+        "sleep_eyeL": [
+          557,
+          672,
+          696,
+          721
+        ],
+        "sleep_eyeR": [
+          789,
+          681,
+          874,
+          726
+        ],
+        "sleep_mouth": [
+          739,
+          758,
+          763,
+          772
+        ],
+        "drag_eyeL": [
+          577,
+          619,
+          685,
+          720
+        ],
+        "drag_eyeR": [
+          795,
+          631,
+          875,
+          727
+        ],
+        "drag_mouth": [
+          709,
+          745,
+          766,
+          764
+        ],
+        "love_eyeL": [
+          539,
+          607,
+          706,
+          776
+        ],
+        "love_eyeR": [
+          799,
+          608,
+          888,
+          768
+        ],
+        "love_mouth": [
+          723,
+          748,
+          785,
+          792
+        ],
+        "dizzy_eyeL": [
+          568,
+          607,
+          701,
+          733
+        ],
+        "dizzy_eyeR": [
+          784,
+          608,
+          878,
+          732
+        ],
+        "dizzy_mouth": [
+          711,
+          761,
+          782,
+          779
+        ],
+        "surprised_eyeL": [
+          535,
+          594,
+          716,
+          758
+        ],
+        "surprised_eyeR": [
+          818,
+          601,
+          904,
+          751
+        ],
+        "surprised_mouth": [
+          751,
+          747,
+          791,
+          795
+        ]
+      },
+      "blush": [
+        253,
+        222,
+        209
+      ],
+      "skin": [
+        253,
+        242,
+        231
+      ]
+    },
+    "schemes": [
+      {
+        "id": "deepseek",
+        "brand": "DeepSeek",
+        "label": "原版",
+        "accent": "#4D6BFE",
+        "ready": true
+      }
+    ],
+    "view": [
+      -12,
+      -8,
+      268,
+      272
+    ],
+    "outfits": [
+      {
+        "id": "maid"
+      }
+    ]
+  },
+  "assets": [
+    "native/feat/dizzy_eyeL.png",
+    "native/feat/dizzy_eyeR.png",
+    "native/feat/dizzy_mouth.png",
+    "native/feat/drag_eyeL.png",
+    "native/feat/drag_eyeR.png",
+    "native/feat/drag_mouth.png",
+    "native/feat/eyeL_ball.png",
+    "native/feat/eyeL_iris.png",
+    "native/feat/eyeL_lash.png",
+    "native/feat/eyeR_ball.png",
+    "native/feat/eyeR_iris.png",
+    "native/feat/eyeR_lash.png",
+    "native/feat/happy_eyeL.png",
+    "native/feat/happy_eyeR.png",
+    "native/feat/happy_mouth.png",
+    "native/feat/love_eyeL.png",
+    "native/feat/love_eyeR.png",
+    "native/feat/love_mouth.png",
+    "native/feat/neutral_mouth.png",
+    "native/feat/sleep_eyeL.png",
+    "native/feat/sleep_eyeR.png",
+    "native/feat/sleep_mouth.png",
+    "native/feat/surprised_eyeL.png",
+    "native/feat/surprised_eyeR.png",
+    "native/feat/surprised_mouth.png",
+    "native/tex/ahoge.png",
+    "native/tex/arm_far.png",
+    "native/tex/arm_far_end_front.png",
+    "native/tex/arm_near.png",
+    "native/tex/bangs.png",
+    "native/tex/bow.png",
+    "native/tex/brows.png",
+    "native/tex/eye_creases.png",
+    "native/tex/face.png",
+    "native/tex/fin_far.png",
+    "native/tex/fin_near.png",
+    "native/tex/hair_back.png",
+    "native/tex/hair_back_curl.png",
+    "native/tex/hair_front_left.png",
+    "native/tex/hair_front_right.png",
+    "native/tex/headdress.png",
+    "native/tex/leg_back.png",
+    "native/tex/leg_front.png",
+    "native/tex/sidelocks.png",
+    "native/tex/skirt.png",
+    "native/tex/skirt_sit.png",
+    "native/tex/tail.png",
+    "native/tex/torso_up.png",
+    "native/tex/waist_bow_front.png",
+    "native/tex/waist_bow_sit_front.png",
+    "retarget_prototype/arm_l.png",
+    "retarget_prototype/arm_r.png",
+    "retarget_prototype/dress.png",
+    "retarget_prototype/face.png",
+    "retarget_prototype/face_angry.png",
+    "retarget_prototype/face_closed.png",
+    "retarget_prototype/face_confused.png",
+    "retarget_prototype/face_cry.png",
+    "retarget_prototype/face_determined.png",
+    "retarget_prototype/face_dizzy.png",
+    "retarget_prototype/face_dragged.png",
+    "retarget_prototype/face_excited.png",
+    "retarget_prototype/face_flustered.png",
+    "retarget_prototype/face_happy.png",
+    "retarget_prototype/face_love.png",
+    "retarget_prototype/face_mask.png",
+    "retarget_prototype/face_neutral.png",
+    "retarget_prototype/face_pout.png",
+    "retarget_prototype/face_sad.png",
+    "retarget_prototype/face_scared.png",
+    "retarget_prototype/face_shy.png",
+    "retarget_prototype/face_sleep.png",
+    "retarget_prototype/face_sleepy.png",
+    "retarget_prototype/face_smug.png",
+    "retarget_prototype/face_surprised.png",
+    "retarget_prototype/face_thinking.png",
+    "retarget_prototype/face_wink.png",
+    "retarget_prototype/face_worried.png",
+    "retarget_prototype/hair_back.png",
+    "retarget_prototype/head.png",
+    "retarget_prototype/head_closed.png",
+    "retarget_prototype/leg_l.png",
+    "retarget_prototype/leg_r.png",
+    "retarget_prototype/rest_composite.png",
+    "retarget_prototype/seat_arm_l.png",
+    "retarget_prototype/seat_arm_r.png",
+    "retarget_prototype/seat_dress.png",
+    "retarget_prototype/seat_hair_back.png",
+    "retarget_prototype/seat_tail.png",
+    "retarget_prototype/seat_wing_l.png",
+    "retarget_prototype/seat_wing_r.png",
+    "retarget_prototype/tail.png",
+    "retarget_prototype/wing_l.png",
+    "retarget_prototype/wing_r.png",
+    "thumb.png"
+  ]
+}

@@ -1,0 +1,21 @@
+# 本地解压与渲染中间产物
+_extract/
+_render/
+ref/
+out/
+
+# 渲染时临时复制进来的宿主代码与包副本（不入仓，见 render/README.md）
+render/web/
+render/figure/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# 日志与临时文件
+*.log
+*.tmp
+node_modules/
