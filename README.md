@@ -90,7 +90,7 @@
 2. 下载发布包：
 
    ```text
-   GPT娘_远古智慧龙_Coopanion_v4.1_互动办公版.zip    ← 最新版，47 个动作词
+   GPT-Niang_v4.1_Coopanion.zip                      ← 最新版，47 个动作词
    GPT-Niang_v1.0.3-beta.zip                         ← 旧版，37 个动作词
    ```
 
