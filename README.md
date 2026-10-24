@@ -90,10 +90,10 @@
 2. 下载最新发布包：
 
    ```text
-   GPT娘_白龙_Coopanion_v1.0.3-beta.zip
+   GPT-Niang_v1.0.3-beta.zip
    ```
 
-3. **不要解压**，直接拿去导入（见下一节）。
+3. 不必手动解压 —— 直接把 zip 交给「导入」即可（Coopanion 会解到 `figures/<id>/`），也可以解压后选目录。
 
 > 发布包约 **13.9 MB**，远低于 Coopanion 单包 128 MB 的上限。
 
@@ -142,7 +142,7 @@ Compress-Archive -Path figure.json,figure.js,face_painter_r5.js,model.json,
 
 1. **启动 Coopanion**，打开 **装扮**（形象 / 换装）页面。
 2. 在形象行的**最后一格**点击「**导入**」。
-3. 选择 `GPT娘_白龙_Coopanion_v1.0.3-beta.zip`，等缩略图出现即可。
+3. 选择 `GPT-Niang_v1.0.3-beta.zip`，等缩略图出现即可。
 
 支持三种投喂方式：**选择 ZIP**、**选择文件夹**、**直接拖拽**。
 
