@@ -87,15 +87,16 @@
 ### 方式一：下载发布包（推荐）
 
 1. 打开本仓库的 [**Releases**](https://github.com/suhong11300/gpt-niang/releases) 页面。
-2. 下载最新发布包：
+2. 下载发布包：
 
    ```text
-   GPT-Niang_v1.0.3-beta.zip
+   GPT娘_远古智慧龙_Coopanion_v4.1_互动办公版.zip    ← 最新版，47 个动作词
+   GPT-Niang_v1.0.3-beta.zip                         ← 旧版，37 个动作词
    ```
 
 3. 不必手动解压 —— 直接把 zip 交给「导入」即可（Coopanion 会解到 `figures/<id>/`），也可以解压后选目录。
 
-> 发布包约 **13.9 MB**，远低于 Coopanion 单包 128 MB 的上限。
+> 发布包约 **28 MB**（v4.1）/ **13.9 MB**（v1.0.3），远低于 Coopanion 单包 128 MB 的上限。
 
 ### 方式二：从源码自行打包
 
@@ -108,19 +109,26 @@ cd gpt-niang
 
 ```bash
 # macOS / Linux
-zip -r GPT-Niang.zip figure.json figure.js face_painter_r5.js model.json \
-    thumb.png native retarget_prototype README.md ARTWORK.md
+zip -r GPT-Niang.zip figure.json figure.js base_figure.js face_painter_r5.js model.json \
+    special_policy.js special_renderer.js special_deform.js TRIGGERS.json \
+    thumb.png native retarget_prototype special README.md ARTWORK.md
 ```
 
 ```powershell
 # Windows PowerShell
-Compress-Archive -Path figure.json,figure.js,face_painter_r5.js,model.json,
-    thumb.png,native,retarget_prototype,README.md,ARTWORK.md -DestinationPath GPT-Niang.zip
+Compress-Archive -Path figure.json,figure.js,base_figure.js,face_painter_r5.js,model.json,
+    special_policy.js,special_renderer.js,special_deform.js,TRIGGERS.json,
+    thumb.png,native,retarget_prototype,special,README.md,ARTWORK.md -DestinationPath GPT-Niang.zip
 ```
 
 ### 版本说明
 
-仓库发布标签为 **v1.0.3 Beta**（第 3 次公开测试）。清单文件 `figure.json` 里的 `"version"` 字段记录的是美术母本的内部版本号 `1.3.0` —— 指向同一份包，前者是发布标签、后者是素材版本，两者不一致属正常。
+清单文件 `figure.json` 里的 `"version"` 字段记录的是**素材内部版本号**，与发布标签是两套编号，不一致属正常。当前两个发布包：
+
+| 发布包 | 素材版本 | 动作词 | 说明 |
+| :--- | :--- | ---: | :--- |
+| v4.1（远古智慧龙·互动办公） | `1.4.0` | 47 | 在 37 词基础上新增 10 个特殊动作词；v4.1 相对 v4 改了包内 README，并在 `figure.json` 追加 `persona` 人格字段，形象与动作文件逐字节相同 |
+| v1.0.3 Beta | `1.3.0` | 37 | 首次公开版本，不含特殊动作 |
 
 ---
 
@@ -142,7 +150,7 @@ Compress-Archive -Path figure.json,figure.js,face_painter_r5.js,model.json,
 
 1. **启动 Coopanion**，打开 **装扮**（形象 / 换装）页面。
 2. 在形象行的**最后一格**点击「**导入**」。
-3. 选择 `GPT-Niang_v1.0.3-beta.zip`，等缩略图出现即可。
+3. 选择下载好的 zip（v4.1 或 v1.0.3 都可以），等缩略图出现即可。
 
 支持三种投喂方式：**选择 ZIP**、**选择文件夹**、**直接拖拽**。
 
@@ -154,22 +162,35 @@ Compress-Archive -Path figure.json,figure.js,face_painter_r5.js,model.json,
 
 ```text
 <Coopanion 数据目录>/home/companion/data/figures/gpt-niang/
-├── figure.json            # 清单：id / 词汇表 / 打扮维度 / 缩略图
-├── figure.js              # 入口模块，导出 createGptBody(base, opts)
+├── figure.json            # 清单：id / 词汇表（47 组）/ 打扮维度 / 缩略图 / persona 人格
+├── figure.js              # 入口模块：接入 special_policy 与 special_renderer
+├── base_figure.js         # 原生底座（figure.js 依赖）
 ├── face_painter_r5.js     # 表情绘制器：裁剪区、眨眼、说话嘴型
-├── model.json             # 母本数据：units / pivots / parts / seated / face
+├── model.json             # 母本数据：units / pivots / parts / face / specials
+├── special_policy.js      # 特殊动作触发策略（概率、冷却、条件）
+├── special_renderer.js    # 特殊动作图集渲染
+├── special_deform.js      # 特殊动作形变
+├── TRIGGERS.json          # 触发参数一览
 ├── thumb.png              # 形象卡片缩略图
-├── README.md              # 包内说明
+├── README.md              # 包内说明（含特殊动作的触发条件）
 ├── ARTWORK.md             # 美术与授权说明
 ├── native/
 │   ├── figure.js          # 原生控制器（原版逐字节副本）
-│   ├── tex/               # 28 张部件贴图（bangs / hair_back / skirt / tail …）
-│   └── feat/              # 28 张五官贴图（眼白、虹膜、睫毛、嘴、晕眩…）
-└── retarget_prototype/    # 表情整图、站姿 / 坐姿部件、面具与底盘
-    ├── face_*.png         # 22 张整脸表情（neutral / happy / sleep / dragged …）
-    ├── face_mask.png      # 抠图遮罩
-    ├── head*.png          # 头部整体
-    ├── seat_*.png         # 坐姿部件
+│   ├── tex/               # 25 张部件贴图（bangs / hair_back / skirt / tail …）
+│   └── feat/              # 25 张五官贴图（眼白、虹膜、睫毛、嘴、晕眩…）
+├── special/               # 7 张特殊动作图集
+│   ├── detective.png      # tease-deepseek
+│   ├── respect.png        # respect-claude
+│   ├── commission.png     # art-commission
+│   ├── writing.png        # writing
+│   ├── office.png         # office
+│   ├── magic_orb.png      # magic-orb
+│   └── quota_exhausted.png # quota-exhausted
+└── retarget_prototype/    # 44 张分层零件
+    ├── face_*.png         # 25 张整脸表情（含 face_mask.png 抠图遮罩）
+    ├── head*.png          # 头部整体（2 张）
+    ├── seat_*.png         # 坐姿部件（7 张）
+    ├── arm / leg / tail / wing / dress / hair_back.png
     └── rest_composite.png # 站姿合成参考图
 ```
 
@@ -179,7 +200,7 @@ Compress-Archive -Path figure.json,figure.js,face_painter_r5.js,model.json,
 
 - **卸载**：装扮页把鼠标悬停到形象卡片上，点右上角**删除**按钮。
 - **回滚**：删除后重新选择形象，Coopanion 会回落到内置形象（如 `whale`）。
-- 本包不写 `models`、`providers`、`persona` 等目录，卸载不影响模型配置、对话记录与人设文件。
+- 本包不写 `models`、`providers` 目录，也不动 `workspace/` 里的 `CONSTITUTION.md`；卸载不影响模型配置、对话记录与人设文件。`figure.json` 里那段 `persona` 只属于形象包本身，随包一起删除。
 
 ---
 
@@ -187,13 +208,16 @@ Compress-Archive -Path figure.json,figure.js,face_painter_r5.js,model.json,
 
 Chat-gpt（GPT娘），远古智慧龙族：银白淡紫长卷发、紫水晶眼、龙角龙翼与白紫鳞尾，白紫幻想礼裙。傲娇自信、知识渊博、爱财宝，偶尔毒舌但无恶意；与 DeepSeek 大肥鱼互损，敬重 Claude。
 
-> ⚠️ **设定先于实现**：以上仅为角色设定摘要，部分表现**尚未实现**。尤其「额度耗尽 / 口吐白沫」模式当前**不可用**，相关素材只是预留，仅作展示参考。完整设定见 [`docs/character-setting.md`](docs/character-setting.md)。
+> 📌 **设定与实现的差距**：「额度耗尽 / 口吐白沫」在 v1.0.3 里只是预留素材，**v4 起已实现为动作词** `quota-exhausted` / `quota-recovered` —— 但它读的是**明确提示词**，不是真实账户额度，形象包不连接任何服务。完整设定见 [`docs/character-setting.md`](docs/character-setting.md)。
 
 ---
 
 ## 🎬 动作展示与介绍
 
-Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再驱动控制器播放时序与惯性。本包完整继承原生 **37 个动作词**（`figure.json` → `vocab`），未增删、未改名，因此手感与官方形象一致。
+Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再驱动控制器播放时序与惯性。
+
+- **v1.0.3**：完整继承原生 **37 个动作词**（`figure.json` → `vocab`），未增删、未改名，手感与官方形象一致。
+- **v4.1**：在 37 词基础上新增 **10 个特殊动作词**（表情 3 + 动作 7），合计 **47 词**。下面 19 + 18 两张表是基础词，v4.1 完全保留。
 
 ### 表情 expression（19）
 
@@ -245,6 +269,53 @@ Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再
 | `shiver` | 发抖 / 哆嗦 | 1.9s | 缩着身子抖一会儿 |
 | `flap` | 扑腾 / 激动 | 1.5s | 开心地蹦起来，鳍、尾巴、呆毛一起扑腾 |
 | `dance` | 跳舞 / 摇摆 | 3.4s | 原地踩着节拍摇摆三秒，冒音符 |
+
+### 特殊动作 special（10，仅 v4.1）
+
+这 10 个词分三种触发方式，**看到它们的频率差别很大**，先看表再看下面的说明。
+
+| 词条 | 中文 | 类型 | 时长 | 怎么触发 |
+| :--- | :--- | :--- | ---: | :--- |
+| `writing` | 写作 | 动作 | 8s | 自动抽签 |
+| `office` | 办公 | 动作 | 8s | 自动抽签 |
+| `magic-orb` | 魔法球待机 | 动作 | 9s | 自动抽签 |
+| `tease-deepseek` | 逗 DeepSeek | 动作 | 5.5s | AI 调 `pet_act` |
+| `respect-claude` | 敬重 Claude | 动作 | 5.5s | AI 调 `pet_act` |
+| `art-commission` | 接画稿开工 | 动作 | 8s | AI 调 `pet_act` |
+| `quota-recovered` | 额度恢复 | 动作 | 4s | 明确提示词 |
+| `quota-exhausted` | 额度耗尽 | 表情 | 0.8s | 明确提示词 |
+| `workload-high` | 工作负载高 | 表情 | 0.2s | 明确提示词 |
+| `workload-normal` | 工作结束 | 表情 | 0.2s | 明确提示词 |
+
+#### 一、自动抽签（`writing` / `office` / `magic-orb`）
+
+| 参数 | 值 | 含义 |
+| :--- | ---: | :--- |
+| `thinkingThresholdSeconds` | 18 | 连续 thinking 满 18 秒才算一次合格机会 |
+| `workChance` | 0.25 | 每个条件段抽一次，25% 命中，命中后写作/办公二选一 |
+| `workCooldownSeconds` | 120 | 成功一次后冷却 120 秒 |
+| `idleAttemptSeconds` | 45 | 安全空闲连续 45 秒后抽一次 |
+| `orbChance` | 0.40 | 魔法球机会 40% 命中 |
+| `orbSuccessCooldownSeconds` | 75 | 成功后冷却 75 秒 |
+
+> ⚠️ **大概率看不到，这是设计如此。** 「安全空闲」要求形象处于 `idle` / `sit` 且没被拖拽、没在移动。Coopanion 桌宠默认会自己散步、张望（roam 默认 `calm`，每 2–4 秒掷一次），**一动就打断计时，45 秒从头再算**。实测连续待机 300 秒，魔法球只出现 2 次。项目里的预览演示是**关闭随机散步并固定随机命中**后逐帧截的，用来展示动作本身，不代表实际出现频率。
+
+#### 二、必须由 AI 主动调用（`tease-deepseek` / `respect-claude` / `art-commission`）
+
+这三个词在形象包内**没有定期抽签**，只有外部信号入口。它们的正常出现方式是：和桌宠聊天时，AI 用 `pet_act` 工具把动作演出来。
+
+想让它更常主动配动作，去 Coopanion 的系统提示词（`data/home/companion/workspace/CONSTITUTION.md`）里加一节，告诉它有哪些词、什么场合演。改动在**下一次新对话开始**时生效。
+
+#### 三、宿主未提供信号通道（`quota-*` / `workload-*`）
+
+这四个是**状态提示词**，不是读账户、读 CPU 或读真实额度。形象包不连接任何服务，也不会自己判断额度用完了；只有 AI 或被明确告知时才演。
+
+用法：明确说出对应的词即可，工作结束记得用 `workload-normal` 收尾。
+
+#### 想更常看到动作？两条路（都不用改发布包）
+
+1. **让 AI 主动配**（推荐）：改 `CONSTITUTION.md`，零代码、不影响别人。
+2. **调自己这一份**：解压后改 `special_policy.js` 里 `DEFAULTS` 的 `idleSeconds`（45→6）、`orbChance`（0.40→1）、`thinkingSeconds`（18→3）、`workChance`（0.25→1）。改的是你自己的副本。
 
 ### 表情绘制机制
 
@@ -330,7 +401,24 @@ Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再
 
 > 想让 `PARTNER.md` 也带龙娘视角，可在开头补一句「（这段话由 GPT娘 记录）」，其余保持简短即可。
 
-### 四、改完怎么验证
+### 四、写进形象包（`persona` 字段）
+
+前两条路改的是**宿主**的人设，换形象也不丢。若想让**人格跟着形象包走**——换回别的形象就自动换回另一套口吻——可以写进包的 `figure.json`：
+
+```json
+"persona": {
+  "zh": "# 我是谁\n\n我叫 Chat-gpt，大家也叫我 GPT娘，我自称「本龙」…"
+}
+```
+
+v4.1 包里已经写好了这一段（1032 字，就是第三节那份龙娘人设的完整版）。注意两件事：
+
+1. **Coopanion 本身不读这个字段**。它由扩展 [`cortico-world-figure-persona`](https://github.com/suhong11300/cortico-world-figure-persona) 读取：装进 `extensions/node_modules/`，再把 `config.json` 里 `worlds.figure-persona.enabled` 设成 `true`。没装扩展时该字段被完全忽略，不影响形象包正常导入使用。
+2. 装了之后，每次会话的环境提示词会多一段「你现在的外形是……」，接人格正文；设置面板会多出「形象人格」页，可以直接改、可以一键生效。
+
+它是**外形层**的补充，和 `CONSTITUTION.md`（宿主层人设）各自独立注入——两边都写龙娘设定时注意别重复，日常留一份就够。
+
+### 五、改完怎么验证
 
 - 新开一段对话，说句「你好呀」，看口吻、长度、是否带龙娘自称。
 - 点开「完整提示词预览」，确认 `CONSTITUTION` 段确实是新内容。
@@ -374,6 +462,20 @@ Coopanion 会把模型输出与交互事件翻译成**动作词**，动作词再
 <summary><b>能用在别的桌宠里吗？</b></summary>
 
 不能直接用。它依赖 Coopanion 的形象包 API（`manifest: 2`）与原生控制器，属于该生态专用格式。
+</details>
+
+<details>
+<summary><b>装了 v4.1，为什么那几个新动作一直看不到？</b></summary>
+
+不是没装好。这 10 个词的触发条件分三类：`writing`/`office`/`magic-orb` 要连续空闲满 45 秒或 thinking 满 18 秒才抽一次，而桌宠默认会自己散步张望，一动就重置计时；`tease-deepseek`/`respect-claude`/`art-commission` 要 AI 主动调 `pet_act`；`quota-*`/`workload-*` 要明确的提示词，形象包不读真实额度。
+
+想让它们更常出现，看上面「[特殊动作 special](#特殊动作-special10仅-v41)」一节的最后两条路。
+</details>
+
+<details>
+<summary><b>v4.1 和 v4 有什么区别？</b></summary>
+
+只改了包内 `README.md`（补了触发条件说明）。形象、动作与数据文件与 v4 **逐字节相同**，装了 v4 的不换也不影响功能，换过来只是为了拿到那份说明。
 </details>
 
 ---
@@ -477,8 +579,8 @@ SOFTWARE.
 **GPT娘 · 白龙 (GPT White Dragon Girl)** is a community-made **figure pack** for [Coopanion](https://github.com/Pal-AI-Lab/Coopanion), the AI desktop companion. Importing it swaps your pet's look for a silver-white, violet-horned ancient dragon girl — while the stock controller, timing, physics and interaction stay untouched.
 
 - **Quick start**: Coopanion → Dress-up page → last card「Import」→ pick the ZIP. Installed to `home/companion/data/figures/gpt-niang/`.
-- **Contents**: a new coordinate grid (10 pivots), dedicated seated parts, 22 full-face expression sheets, a custom face painter, and the 37 native action words (19 expressions + 18 motions).
-- **Prompts**: this pack changes **appearance only**. Edit the persona in Coopanion's *Settings → System prompt → CONSTITUTION*, or directly edit `workspace/CONSTITUTION.md` and `workspace/PARTNER.md`.
+- **Contents**: a new coordinate grid (10 pivots), dedicated seated parts, 22 full-face expression sheets, a custom face painter, and **47 action words** — the 37 native ones (19 expressions + 18 motions) plus 10 specials added in v4.1 (interaction / office / quota states).
+- **Prompts**: this pack changes **appearance only**. Edit the persona in Coopanion's *Settings → System prompt → CONSTITUTION*, or directly edit `workspace/CONSTITUTION.md` and `workspace/PARTNER.md`. v4.1 also ships an optional `persona` field inside `figure.json`, which only takes effect with the `cortico-world-figure-persona` extension installed and `worlds.figure-persona.enabled` set to `true`.
 - **License**: MIT for original code and art; `native/figure.js` is an unmodified copy from Coopanion and stays **AGPL-3.0-or-later**.
 - **Credits**: built on Pal-AI-Lab/Coopanion and the Cortico framework; original character concept by 溟月(上善无形); DeepSeek mermaid spin-off by ZipPipe.
 

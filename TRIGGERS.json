@@ -1,0 +1,23 @@
+{
+  "version": "1.4.0",
+  "userApprovedScope": "keep software unchanged; thinking/high-intensity hints, explicit quota/AI action words",
+  "workChance": 0.25,
+  "orbChance": 0.4,
+  "thinkingThresholdSeconds": 18,
+  "workCooldownSeconds": 120,
+  "idleAttemptSeconds": 45,
+  "orbSuccessCooldownSeconds": 75,
+  "quota": "explicit depletion/recovery vocabulary; no live account detection",
+  "words": [
+    "tease-deepseek",
+    "respect-claude",
+    "art-commission",
+    "quota-exhausted",
+    "quota-recovered",
+    "workload-high",
+    "workload-normal",
+    "writing",
+    "office",
+    "magic-orb"
+  ]
+}

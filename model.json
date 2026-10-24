@@ -1,5 +1,5 @@
 {
-  "status": "1.3.0 runnable art candidate",
+  "status": "1.4.0 special actions candidate; visual acceptance pending",
   "units": {
     "S": 0.2,
     "X0": 627,
@@ -2081,6 +2081,339 @@
     "retarget_prototype/tail.png",
     "retarget_prototype/wing_l.png",
     "retarget_prototype/wing_r.png",
+    "special/commission.png",
+    "special/detective.png",
+    "special/magic_orb.png",
+    "special/office.png",
+    "special/quota_exhausted.png",
+    "special/respect.png",
+    "special/writing.png",
     "thumb.png"
-  ]
+  ],
+  "specials": {
+    "version": "1.4.0",
+    "sources": {
+      "quota_exhausted": {
+        "file": "quota_exhausted_raw.png",
+        "width": 1254,
+        "height": 1254,
+        "alphaBounds": [
+          14,
+          31,
+          1244,
+          1213
+        ],
+        "scale": 0.19120135363790186,
+        "left": 8.116751269035532,
+        "top": 24.072758037225043,
+        "opaquePixels": 922922,
+        "sourceSha256": "ee73d494364b65578edb0187731c25cad9b95c3bf4087eb7ac3e82709fa95be0",
+        "registration": "one uniform scale and translation; no per-piece/aspect stretch"
+      },
+      "writing": {
+        "file": "writing_raw.png",
+        "width": 1254,
+        "height": 1254,
+        "alphaBounds": [
+          20,
+          46,
+          1240,
+          1197
+        ],
+        "scale": 0.19635099913119028,
+        "left": 4.8879235447437,
+        "top": 20.967854039965232,
+        "opaquePixels": 874820,
+        "sourceSha256": "aee67eea13c64453bc0818adabeb3b2b4279ee37257737a28d1a3670bb38aa51",
+        "registration": "one uniform scale and translation; no per-piece/aspect stretch"
+      },
+      "office": {
+        "file": "office_raw.png",
+        "width": 1254,
+        "height": 1254,
+        "alphaBounds": [
+          18,
+          46,
+          1240,
+          1197
+        ],
+        "scale": 0.19635099913119028,
+        "left": 4.8879235447437,
+        "top": 20.967854039965232,
+        "opaquePixels": 883388,
+        "sourceSha256": "df3b9de4038d6b3d49deaa5b3441ea8e702c4a856d91444adaf0c9a0cf11b66e",
+        "registration": "one uniform scale and translation; no per-piece/aspect stretch"
+      },
+      "detective": {
+        "file": "detective_raw.png",
+        "width": 1254,
+        "height": 1254,
+        "alphaBounds": [
+          136,
+          24,
+          1174,
+          1228
+        ],
+        "scale": 0.1877076411960133,
+        "left": 10.307308970099669,
+        "top": 25.495016611295682,
+        "opaquePixels": 814238,
+        "sourceSha256": "73068de837775eaa5be888db923e16d072d252aeae5467b8b2ecc746bfcd8762",
+        "registration": "one uniform scale and translation; no per-piece/aspect stretch"
+      },
+      "respect": {
+        "file": "respect_raw.png",
+        "width": 1254,
+        "height": 1254,
+        "alphaBounds": [
+          129,
+          20,
+          1170,
+          1238
+        ],
+        "scale": 0.18555008210180624,
+        "left": 11.660098522167488,
+        "top": 26.28899835796389,
+        "opaquePixels": 839903,
+        "sourceSha256": "3f76bcb73d43845f4e5c81f914dc74b1b9291d41ac0e95addf7ff65ea7300ec8",
+        "registration": "one uniform scale and translation; no per-piece/aspect stretch"
+      },
+      "commission": {
+        "file": "commission_raw.png",
+        "width": 1254,
+        "height": 1254,
+        "alphaBounds": [
+          99,
+          72,
+          1166,
+          1167
+        ],
+        "scale": 0.20639269406392693,
+        "left": -16.474885844748854,
+        "top": 15.139726027397273,
+        "opaquePixels": 708399,
+        "sourceSha256": "452f1db7725e50ddf7833ebf6faae9f7ebd036e3c0aae03c2bce04842f30d077",
+        "registration": "one uniform scale and translation; no per-piece/aspect stretch"
+      },
+      "magic_orb": {
+        "file": "magic_orb_reference.png",
+        "width": 1254,
+        "height": 1254,
+        "alphaBounds": [
+          125,
+          28,
+          1163,
+          1224
+        ],
+        "scale": 0.18896321070234115,
+        "left": 9.520066889632105,
+        "top": 24.709030100334445,
+        "opaquePixels": 810699,
+        "sourceSha256": "49c4343d46e6a56835218c79f67e51997dab0fa2578be29fe7fd603e67cf8883",
+        "registration": "one uniform scale and translation; no per-piece/aspect stretch"
+      }
+    },
+    "rig": {
+      "view": [
+        -12,
+        -8,
+        268,
+        272
+      ],
+      "deformers": {
+        "body": {
+          "kind": "rot",
+          "pivot": [
+            128,
+            256
+          ]
+        },
+        "warp_quota_exhausted": {
+          "kind": "warp",
+          "parent": "body",
+          "rect": [
+            8.116751269035532,
+            24.072758037225043,
+            247.88324873096445,
+            263.839255499154
+          ]
+        },
+        "warp_writing": {
+          "kind": "warp",
+          "parent": "body",
+          "rect": [
+            4.8879235447437,
+            20.967854039965232,
+            251.1120764552563,
+            267.19200695047783
+          ]
+        },
+        "warp_office": {
+          "kind": "warp",
+          "parent": "body",
+          "rect": [
+            4.8879235447437,
+            20.967854039965232,
+            251.1120764552563,
+            267.19200695047783
+          ]
+        },
+        "warp_detective": {
+          "kind": "warp",
+          "parent": "body",
+          "rect": [
+            10.307308970099669,
+            25.495016611295682,
+            245.69269102990035,
+            260.8803986710964
+          ]
+        },
+        "warp_respect": {
+          "kind": "warp",
+          "parent": "body",
+          "rect": [
+            11.660098522167488,
+            26.28899835796389,
+            244.3399014778325,
+            258.9688013136289
+          ]
+        },
+        "warp_commission": {
+          "kind": "warp",
+          "parent": "body",
+          "rect": [
+            -16.474885844748854,
+            15.139726027397273,
+            242.34155251141553,
+            273.95616438356166
+          ]
+        },
+        "warp_magic_orb": {
+          "kind": "warp",
+          "parent": "body",
+          "rect": [
+            9.520066889632105,
+            24.709030100334445,
+            246.47993311036788,
+            261.66889632107024
+          ]
+        }
+      },
+      "parts": [
+        {
+          "id": "special_quota_exhausted",
+          "tex": "quota_exhausted",
+          "parent": "warp_quota_exhausted",
+          "box": [
+            8.116751269035532,
+            24.072758037225043,
+            239.76649746192894,
+            239.76649746192894
+          ],
+          "grid": [
+            28,
+            28
+          ],
+          "z": 0
+        },
+        {
+          "id": "special_writing",
+          "tex": "writing",
+          "parent": "warp_writing",
+          "box": [
+            4.8879235447437,
+            20.967854039965232,
+            246.2241529105126,
+            246.2241529105126
+          ],
+          "grid": [
+            28,
+            28
+          ],
+          "z": 0
+        },
+        {
+          "id": "special_office",
+          "tex": "office",
+          "parent": "warp_office",
+          "box": [
+            4.8879235447437,
+            20.967854039965232,
+            246.2241529105126,
+            246.2241529105126
+          ],
+          "grid": [
+            28,
+            28
+          ],
+          "z": 0
+        },
+        {
+          "id": "special_detective",
+          "tex": "detective",
+          "parent": "warp_detective",
+          "box": [
+            10.307308970099669,
+            25.495016611295682,
+            235.38538205980066,
+            235.38538205980066
+          ],
+          "grid": [
+            28,
+            28
+          ],
+          "z": 0
+        },
+        {
+          "id": "special_respect",
+          "tex": "respect",
+          "parent": "warp_respect",
+          "box": [
+            11.660098522167488,
+            26.28899835796389,
+            232.67980295566502,
+            232.67980295566502
+          ],
+          "grid": [
+            28,
+            28
+          ],
+          "z": 0
+        },
+        {
+          "id": "special_commission",
+          "tex": "commission",
+          "parent": "warp_commission",
+          "box": [
+            -16.474885844748854,
+            15.139726027397273,
+            258.8164383561644,
+            258.8164383561644
+          ],
+          "grid": [
+            28,
+            28
+          ],
+          "z": 0
+        },
+        {
+          "id": "special_magic_orb",
+          "tex": "magic_orb",
+          "parent": "warp_magic_orb",
+          "box": [
+            9.520066889632105,
+            24.709030100334445,
+            236.9598662207358,
+            236.9598662207358
+          ],
+          "grid": [
+            28,
+            28
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "scope": "local action vocabulary and thinking-only hint; no account or system-load bridge"
+  }
 }
