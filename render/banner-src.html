@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1200px;height:360px;overflow:hidden;font-family:"Microsoft YaHei","Noto Sans SC",system-ui,sans-serif}
+  .banner{position:relative;width:1200px;height:360px;display:flex;align-items:center;overflow:hidden}
+  .dark{background:radial-gradient(120% 140% at 78% 20%,#4b3f74 0%,#2b2242 45%,#171325 100%)}
+  .light{background:radial-gradient(120% 140% at 78% 20%,#ffffff 0%,#f0eafc 45%,#e3dbf6 100%)}
+  .glow{position:absolute;width:520px;height:520px;border-radius:50%;right:40px;top:-90px;filter:blur(70px);opacity:.5;background:#aa88d1}
+  .txt{position:relative;z-index:2;padding-left:78px;flex:1}
+  h1{font-size:62px;letter-spacing:2px;line-height:1.1}
+  .dark h1{color:#fff;text-shadow:0 4px 24px rgba(170,136,209,.55)}
+  .light h1{color:#2a2340}
+  .sub{margin-top:16px;font-size:21px;letter-spacing:1px}
+  .dark .sub{color:#cbb9ea}
+  .light .sub{color:#6b5f8a}
+  .tags{margin-top:24px;display:flex;gap:10px}
+  .tag{font-size:15px;padding:7px 16px;border-radius:999px;letter-spacing:.5px}
+  .dark .tag{color:#e7dcff;background:rgba(170,136,209,.18);border:1px solid rgba(170,136,209,.5)}
+  .light .tag{color:#6a4fa0;background:rgba(170,136,209,.14);border:1px solid rgba(150,115,200,.45)}
+  .art{position:relative;z-index:2;width:360px;height:360px;flex:none;display:flex;align-items:flex-end;justify-content:center}
+  .art img{height:352px;filter:drop-shadow(0 12px 36px rgba(90,60,150,.45))}
+  .vline{position:absolute;right:404px;top:70px;width:1px;height:220px;background:linear-gradient(180deg,transparent,rgba(170,136,209,.6),transparent)}
+</style></head>
+<body>
+  <div class="banner dark" id="dark">
+    <div class="glow"></div>
+    <div class="txt">
+      <h1>GPT娘 · 白龙</h1>
+      <div class="sub">Coopanion 形象包 · 银白淡紫龙娘 · 37 个原生动作词</div>
+      <div class="tags"><span class="tag">figure.json 规范</span><span class="tag">v1.0.3 Beta</span><span class="tag">MIT</span></div>
+    </div>
+    <div class="vline"></div>
+    <div class="art"><img src="../docs/preview/hero-alpha.png"></div>
+  </div>
+</body></html>

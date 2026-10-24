@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/preview/banner-dark.png">
+    <img src="docs/preview/banner.png" alt="GPT娘 · 白龙 — Coopanion 自定义形象包" width="900">
+  </picture>
+</p>
+
 <div align="center">
 
 # 🐉 GPT娘 · 白龙

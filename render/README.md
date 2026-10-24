@@ -45,7 +45,10 @@ node record.mjs --words wave --frames 46 --tag wave   # 录一个动作的帧序
 node sheet.mjs  --size 240                      # 按 figure.json 的 vocab 逐词录关键帧到 out/sheet/
 node gridshot.mjs --type expr                   # 生成表情总表 out/sheet-expr.png
 node gridshot.mjs --type motion                 # 生成动作总表 out/sheet-motion.png
+node banner.mjs                                 # 重出顶部 banner（banner-src.html，深浅两版到 ../docs/preview/）
 ```
+
+`banner-src.html` 是 README 顶部横幅的版式源文件，用的是透明底立绘 `docs/preview/hero-alpha.png`（由 `record.mjs --bg none` 抓出）；改文案或配色后跑 `banner.mjs` 重出图即可。
 
 帧序列合成 GIF：
 
