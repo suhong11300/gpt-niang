@@ -11,10 +11,10 @@
 
 **一只住在屏幕底边、会画画也会毒舌的远古智慧龙娘 —— Coopanion 自定义形象包**
 
-[![Version](https://img.shields.io/badge/version-v1.0.3--beta-aa88d1?style=flat-square)](https://github.com/suhong11300/gpt-niang/releases)
+[![Version](https://img.shields.io/badge/version-v4.2-aa88d1?style=flat-square)](https://github.com/suhong11300/gpt-niang/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-4b8bbe?style=flat-square)](#-环境要求)
 [![Figure API](https://img.shields.io/badge/figure%20API-manifest%202-9b59b6?style=flat-square)](#-文件结构)
-[![Vocab](https://img.shields.io/badge/vocab-37%20words-7e57c2?style=flat-square)](#-动作展示与介绍)
+[![Vocab](https://img.shields.io/badge/vocab-47%20words-7e57c2?style=flat-square)](#-动作展示与介绍)
 [![License](https://img.shields.io/badge/license-MIT%20%2B%20AGPL--3.0-2ea44f?style=flat-square)](#-许可证)
 
 [简体中文](#-项目介绍) · [English](#english-summary)
@@ -90,7 +90,7 @@
 2. 下载发布包：
 
    ```text
-   GPT-Niang_v4.2_Coopanion.zip                      ← 最新版，47 个动作词，特殊动作已调到日常可见
+   GPT-LongNiang-DesktopPet-v4.2.zip                 ← 最新版「GPT-龙娘桌宠 v4.2」，47 个动作词，特殊动作已调到日常可见
    GPT-Niang_v4.1_Coopanion.zip                      ← 上一版，特殊动作触发极稀疏
    GPT-Niang_v1.0.3-beta.zip                         ← 旧版，37 个动作词
    ```
@@ -122,13 +122,30 @@ Compress-Archive -Path figure.json,figure.js,base_figure.js,face_painter_r5.js,m
     thumb.png,native,retarget_prototype,special,README.md,ARTWORK.md -DestinationPath GPT-Niang.zip
 ```
 
+### 版本命名规则
+
+从 v4.2 起，发布包统一按 **`GPT-龙娘桌宠 vX.Y`** 命名：
+
+| 位置 | 命名格式 | 当前示例 |
+| :--- | :--- | :--- |
+| Release 标题 | `GPT-龙娘桌宠 vX.Y` | `GPT-龙娘桌宠 v4.2` |
+| 桌面文件名 | `GPT-龙娘桌宠 vX.Y.zip` | `GPT-龙娘桌宠 v4.2.zip` |
+| Release 资产名 | `GPT-LongNiang-DesktopPet-vX.Y.zip` | `GPT-LongNiang-DesktopPet-v4.2.zip` |
+| Git tag | `vX.Y` | `v4.2` |
+
+> Release 资产名必须是纯 ASCII —— GitHub 会把上传时的中文文件名替换成 `GPT._._.zip` 这类乱码，所以资产用 `GPT-LongNiang-DesktopPet-vX.Y.zip`，而下载页标题与桌面文件名保持中文。两者是同一个包，SHA256 一致。
+
+**小版本**（v4.2 → v4.3 → …）指参数调整、资源补充、触发逻辑修正这类迭代，维护者直接推进，不再单独确认；**大版本**（v5.0 起）涉及美术重制或结构变更，会提前声明。
+
+历史的 v4.1 与 v1.0.3-beta 保留原有命名，不再改动。
+
 ### 版本说明
 
 清单文件 `figure.json` 里的 `"version"` 字段记录的是**素材内部版本号**，与发布标签是两套编号，不一致属正常。当前三个发布包：
 
 | 发布包 | 素材版本 | 动作词 | 说明 |
 | :--- | :--- | ---: | :--- |
-| v4.2（远古智慧龙·日常动作版） | `1.4.0` | 47 | 把 `special_policy.js` 的触发阈值调到日常可见（空闲 45→6 秒、thinking 18→4 秒、新增社交动作自动抽签），并把 `persona` 人格真正打进发布包；美术资源与 v4.1 逐字节相同 |
+| **GPT-龙娘桌宠 v4.2**（远古智慧龙·日常动作） | `1.4.0` | 47 | 把 `special_policy.js` 的触发阈值调到日常可见（空闲 45→6 秒、thinking 18→4 秒、新增社交动作自动抽签），并把 `persona` 人格真正打进发布包；美术资源与 v4.1 逐字节相同 |
 | v4.1（远古智慧龙·互动办公） | `1.4.0` | 47 | 在 37 词基础上新增 10 个特殊动作词。该版发布包只更新了 README，`persona` 字段当时只进了源码、**没打进 zip** |
 | v1.0.3 Beta | `1.3.0` | 37 | 首次公开版本，不含特殊动作 |
 
